@@ -33,50 +33,147 @@
 //}
 
 // out parametreler
-string sayi = "999";
-bool sonuc = int.TryParse(sayi, out int outSayi);
+//string sayi = "999";
+//bool sonuc = int.TryParse(sayi, out int outSayi);
+//if (sonuc) 
+//{
+//    Console.WriteLine("Başarılı!");
+//    Console.WriteLine(outSayi);
+//}
+//else 
+//{
+//    Console.WriteLine("Başarısız!");
+//}
+//Metotlar instance= new Metotlar();
+//instance.Topla(4, 5, out int toplamSonucu);
+//Console.WriteLine(toplamSonucu);
+
+////Metot aşırı yükleme-overloading
+
+//int ifade = 999;
+//instance.EkranaYazdir(ifade);
+//instance.EkranaYazdir(Convert.ToString(ifade));
+//instance.EkranaYazdir("Ali", "Anapalar");
+
+////metot imzası+parametre sayısı+parametre
+
+
+
+//class Metotlar 
+//{
+//    public void Topla(int a,int b,out int toplam) 
+//    {
+//        toplam = a + b;
+//    }
+
+//    public void EkranaYazdir(string veri) 
+//    {
+//        Console.WriteLine(veri);
+//    }
+//    public void EkranaYazdir(int veri)
+//    {
+//        Console.WriteLine(veri);
+//    }
+//    public void EkranaYazdir(string veri1,string veri2)
+//    {
+//        Console.WriteLine(veri1+veri2);
+//    }
+
+//}
+
+//Recursive-Öz yinelemeli
+
+using System.Reflection.Metadata;
+
+int result = 1;
+for(int i = 1; i < 5; i++)
+{
+    result*= 3;
+    
+}
+Console.WriteLine(result);
+Islemler instance = new();
+Console.WriteLine(instance.Expo(3, 4));
+
+//Extension Metotlar
+string ifade = "Ali Anapalar";
+bool sonuc = ifade.CheckSpaces();
+Console.WriteLine(sonuc);
+
 if (sonuc) 
 {
-    Console.WriteLine("Başarılı!");
-    Console.WriteLine(outSayi);
+    Console.WriteLine(ifade.RemoveWhiteSpaces());
 }
-else 
+Console.WriteLine(ifade.MakeUpperCase());
+Console.WriteLine(ifade.MakeLowerCase());
+
+int[] dizi = { 9, 3, 6, 2, 1, 5, 0 };
+dizi.SortArray();
+dizi.EkranaYazdir();
+
+int sayi = 5;
+Console.WriteLine(sayi.IsEvenNumber());
+Console.WriteLine(ifade.GetFirstCharacter());
+
+
+public class Islemler 
 {
-    Console.WriteLine("Başarısız!");
+    public int Expo(int sayi,int us) 
+    {
+        if (us == 0) 
+        {
+            return 1;
+        }
+        else if (us == 1) 
+        {
+            return sayi;
+        }
+        else 
+        {
+            return Expo(sayi, us - 1) * sayi;
+        }
+        
+    }
 }
-Metotlar instance= new Metotlar();
-instance.Topla(4, 5, out int toplamSonucu);
-Console.WriteLine(toplamSonucu);
 
-//Metot aşırı yükleme-overloading
-
-int ifade = 999;
-instance.EkranaYazdir(ifade);
-instance.EkranaYazdir(Convert.ToString(ifade));
-instance.EkranaYazdir("Ali", "Anapalar");
-
-//metot imzası+parametre sayısı+parametre
-
-
-
-class Metotlar 
+public static class Extension 
 {
-    public void Topla(int a,int b,out int toplam) 
+    public static bool CheckSpaces(this string param) 
     {
-        toplam = a + b;
+        return param.Contains(" ");
     }
-
-    public void EkranaYazdir(string veri) 
+    public static string RemoveWhiteSpaces(this string param)
     {
-        Console.WriteLine(veri);
+        string[] dizi = param.Split(' ');
+        return string.Join(" ", dizi);
     }
-    public void EkranaYazdir(int veri)
+    public static string MakeUpperCase(this string param)
     {
-        Console.WriteLine(veri);
+        return param.ToUpper();
     }
-    public void EkranaYazdir(string veri1,string veri2)
+    public static string MakeLowerCase(this string param)
     {
-        Console.WriteLine(veri1+veri2);
+        return param.ToLower();
+    }
+    public static int[] SortArray(this int[] param) 
+    {
+        Array.Sort(param);
+        return param;
+    }
+    public static void EkranaYazdir(this int[] param) 
+    {
+        foreach (int item in param)
+        {
+            Console.WriteLine(item);
+        }
+    }
+    public static bool IsEvenNumber(this int param) 
+    {
+        return param % 2 == 0;
+    }  
+    public static string GetFirstCharacter(this string param) 
+    {
+        return param.Substring(0, 1);
     }
 
 }
