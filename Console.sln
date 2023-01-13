@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Methods", "Methods\Methods.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework", "Homework\Homework.csproj", "{5F48D82F-8A2C-494D-90B9-A6D20DB355E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringMethods", "StringMethods\StringMethods.csproj", "{8E71D9A4-83E7-48D0-B2BC-61DB49ED9798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringMethods", "StringMethods\StringMethods.csproj", "{8E71D9A4-83E7-48D0-B2BC-61DB49ED9798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTime-Math Library", "DateTime-Math Library\DateTime-Math Library.csproj", "{90AE3199-B9A4-405F-A0EF-C5358D1D82C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{8E71D9A4-83E7-48D0-B2BC-61DB49ED9798}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E71D9A4-83E7-48D0-B2BC-61DB49ED9798}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E71D9A4-83E7-48D0-B2BC-61DB49ED9798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90AE3199-B9A4-405F-A0EF-C5358D1D82C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90AE3199-B9A4-405F-A0EF-C5358D1D82C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90AE3199-B9A4-405F-A0EF-C5358D1D82C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90AE3199-B9A4-405F-A0EF-C5358D1D82C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
